@@ -1,12 +1,22 @@
 package com.clocker.dto;
 
+import java.util.List;
+
 public class UserDTO {
 	
 	private String email;
 	private String firstName;
 	private String lastName;
 	private String password;
+	private List<String> roles;
+
 	
+	public List<String> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
 	public String getEmail() {
 		return email;
 	}

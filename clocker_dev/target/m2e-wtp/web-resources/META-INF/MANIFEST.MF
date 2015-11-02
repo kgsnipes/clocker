@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Built-By: kaushik.ganguly
-Build-Jdk: 1.8.0_45
-Implementation-Title: clocker
-Implementation-Version: 0.1
-Implementation-Vendor-Id: clocker
-Implementation-Vendor: Pivotal Software, Inc.
-Created-By: Maven Integration for Eclipse
-

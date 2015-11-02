@@ -10,10 +10,12 @@
 <title>Welcome</title>
 </head>
 <body>
-	<h2>${message}</h2>
 	
 	
+	
+app home
 
+<a href="logout">Logout</a>
 
 
 </body>

@@ -1,6 +1,5 @@
 package com.clocker.controller;
 
-import java.util.Locale;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,24 +15,38 @@ import com.clocker.service.UserService;
 @Controller
 public class HomeController {
 	
-	@Autowired
-	private UserService userService;
-	
-	 @Value("${sample.message}")
-	 private String someMessage;
-	 
-	 @Autowired
-	 private MessageSource messageSource;
-	 
+
 	private static final Logger log=Logger.getLogger(HomeController.class.getName());
 	
 	
+	@RequestMapping("/")
+	public String rootPage(Model model)
+	{
+		return "redirect:/login";
+	}
+	
 	@RequestMapping("/login")
-	public String homePage(Model model)
+	public String login(Model model)
 	{
 		
-		model.addAttribute("message", someMessage);
-		return "showMessage";
+		
+		return "layouts/login";
+	}
+	
+	@RequestMapping("/logout")
+	public String logout(Model model)
+	{
+		
+		
+		return "layouts/login";
+	}
+	
+	@RequestMapping("/app")
+	public String appHome(Model model)
+	{
+		
+		
+		return "layouts/appHome";
 	}
 
 }

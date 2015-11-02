@@ -3,12 +3,20 @@
 	updateCheck="true" 
 	monitoring="autodetect" 
 	dynamicConfig="true"
-	maxBytesLocalHeap="300M"	
+	maxBytesLocalHeap="200M"	
 	>
 	<diskStore path="java.io.tmpdir"/>	
  
-	<cache name="clocker_dao"
-	      maxBytesLocalHeap="256M"
+	<cache name="users"
+	      maxBytesLocalHeap="100M"
+	      eternal="false"
+	      timeToIdleSeconds="300"
+	      overflowToDisk="true"
+	      maxElementsOnDisk="1000"	      
+	      memoryStoreEvictionPolicy="LRU"/>	  
+	      
+	<cache name="projects"
+	      maxBytesLocalHeap="100M"
 	      eternal="false"
 	      timeToIdleSeconds="300"
 	      overflowToDisk="true"

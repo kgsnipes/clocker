@@ -1,44 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:security="http://www.springframework.org/schema/security"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/security
-                           http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+                           http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <security:global-method-security secured-annotations="enabled" />
-    
-    <security:http auto-config="true">
-        <!-- Restrict URLs based on role -->
-        <security:intercept-url pattern="/login*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        <security:intercept-url pattern="/logoutSuccess*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        
-        <security:intercept-url pattern="/css/main.css" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        <security:intercept-url pattern="/resources/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider
+			user-service-ref="userService" >
+				<security:password-encoder hash="plaintext" />
+			</security:authentication-provider>
+	</security:authentication-manager>
 
-        <security:intercept-url pattern="/**" access="ROLE_USER" requires-channel="https"/>
+	<!-- <bean id="userAuthenticationProvider" class="com.clocker.security.DefaultUserAuthenticationProvider">
+	</bean> -->
 
-        <!-- Override default login and logout pages -->
-        <security:form-login login-page="/login" 
-                             login-processing-url="/loginProcess" 
-                             default-target-url="/" 
-                             authentication-failure-url="/login.html?login_error=1" />
-        <security:logout logout-url="/logout" logout-success-url="/logoutSuccess.html" />
-        <security:port-mappings>
-         <security:port-mapping http="8080" https="8443"/>
-        </security:port-mappings>
-        
-    </security:http>
+	<security:global-method-security
+		secured-annotations="enabled" />
 
-   <security:authentication-manager >
-        <security:authentication-provider>
-            <security:user-service>
-                <security:user name="kaushik"  password="123456"  authorities="ROLE_USER" />
-                <security:user name="sridhar" password="123456" authorities="ROLE_ADMIN" />
-                <security:user name="sushil"   password="123456" authorities="ROLE_APPROVER" />
-            </security:user-service>
-        </security:authentication-provider>
-    </security:authentication-manager>
+	<security:http auto-config="true">
+		<!-- Restrict URLs based on role -->
+		<security:intercept-url pattern="/login*" />
+		<security:intercept-url pattern="/app/**"
+			access="ROLE_SUPERUSER,ROLE_ADMIN,ROLE_APPROVER,ROLE_USER" />
+
+		<security:intercept-url pattern="/ui/**"
+			access="ROLE_GUEST" />
+
+		<security:intercept-url pattern="/**"
+			requires-channel="https" />
+
+		<!-- Override default login and logout pages -->
+		<security:form-login login-page="/login"
+			login-processing-url="/login-validate" default-target-url="/app"
+			authentication-failure-url="/login?error=1" />
+		<security:logout logout-url="/logout"
+			logout-success-url="/login" invalidate-session="true" />
+		<security:port-mappings>
+			<security:port-mapping http="8080" https="8443" />
+		</security:port-mappings>
+
+		<security:anonymous username="guest"
+			granted-authority="ROLE_GUEST" />
+
+	</security:http>
+
+
+
+
+
 
 </beans>
