@@ -17,7 +17,8 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         <param-value>
         /WEB-INF/mvc-config.xml
         /WEB-INF/spring-security.xml
-        /WEB-INF/db-config.xml        
+        /WEB-INF/db-config.xml  
+        /WEB-INF/bean-config.xml        
         </param-value>
     </context-param>
     

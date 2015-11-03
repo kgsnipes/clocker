@@ -1,0 +1,43 @@
+//app common variables
+
+$app_bgcolor: #fff;
+$app_fontcolor: #35af03;
+$app_fontfamily: 'Open Sans',sans-serif;
+
+@import 'appmixins';
+
+.appbgcolor
+{
+	background-color:$app_bgcolor;
+}
+
+.button
+{
+		font-size:15px;
+		padding-top:5px;
+		padding-bottom:5px;
+		padding-left:10px;
+		padding-right:10px;
+		background-color:$app_fontcolor;
+		color:$app_bgcolor;
+		@include bold_text(bold);
+		border:1px solid $app_fontcolor;
+}
+
+body
+{
+	@extend .appbgcolor;
+	padding-bottom: 70px;
+	
+}
+
+
+.well_without_border
+{
+	@extend .appbgcolor;
+	border:0px solid $app_bgcolor;
+	border-radius:0px;
+	color:$app_bgcolor;
+	box-shadow:none;
+}
+

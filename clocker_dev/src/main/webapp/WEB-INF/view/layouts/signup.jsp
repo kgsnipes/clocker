@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Clocker - signup</title>
+<title>Clocker - Login</title>
 <jsp:include page="../partials/resources.jsp"></jsp:include>
 </head>
 <body class="appbgcolor">
@@ -23,7 +23,7 @@
 	<div class="row">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
-		<jsp:include page="../partials/signupform.jsp"></jsp:include>
+		<jsp:include page="../partials/loginform.jsp"></jsp:include>
 	</div>
 	<div class="col-md-4"></div>
 	</div>

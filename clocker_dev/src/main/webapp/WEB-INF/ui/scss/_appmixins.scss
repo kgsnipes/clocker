@@ -1,0 +1,7 @@
+//app mixins
+
+
+@mixin bold_text($bold)
+{
+	font-weight:$bold;
+}

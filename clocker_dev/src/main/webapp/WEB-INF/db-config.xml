@@ -18,7 +18,7 @@
 			socket-keep-alive="true" socket-timeout="1500" slave-ok="true"
 			write-number="1" write-timeout="0" write-fsync="true" />
  -->
-	<mongo:mongo host="127.0.0.1" port="27017"></mongo:mongo>
+	<mongo:mongo host="127.0.0.1" port="27017" write-concern="1"></mongo:mongo>
 	<mongo:db-factory dbname="clocker" />
 	<mongo:repositories base-package="com.clocker.repository" />
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">

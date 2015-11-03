@@ -9,12 +9,10 @@
 	<security:authentication-manager alias="authenticationManager">
 		<security:authentication-provider
 			user-service-ref="userService" >
-				<security:password-encoder hash="plaintext" />
+				<security:password-encoder ref="encoder" />
 			</security:authentication-provider>
 	</security:authentication-manager>
 
-	<!-- <bean id="userAuthenticationProvider" class="com.clocker.security.DefaultUserAuthenticationProvider">
-	</bean> -->
 
 	<security:global-method-security
 		secured-annotations="enabled" />
@@ -23,7 +21,7 @@
 		<!-- Restrict URLs based on role -->
 		<security:intercept-url pattern="/login*" />
 		<security:intercept-url pattern="/app/**"
-			access="ROLE_SUPERUSER,ROLE_ADMIN,ROLE_APPROVER,ROLE_USER" />
+			access="ROLE_SUPERUSER,ROLE_ADMIN,ROLE_MANAGER,ROLE_PROXY,ROLE_EMPLOYEE" />
 
 		<security:intercept-url pattern="/ui/**"
 			access="ROLE_GUEST" />

@@ -15,12 +15,25 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private List<String> roles;
+	private List<String> organisations;
 	private Boolean disabled;
 	private Date createdOn;
 	private Date lastModifiedOn;
 	private String createdBy;
+	private String apiKey;
 	
-	
+	public List<String> getOrganisations() {
+		return organisations;
+	}
+	public void setOrganisations(List<String> organisations) {
+		this.organisations = organisations;
+	}
+	public String getApiKey() {
+		return apiKey;
+	}
+	public void setApiKey(String apiKey) {
+		this.apiKey = apiKey;
+	}
 	
 	public Boolean getDisabled() {
 		return disabled;

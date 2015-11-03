@@ -1,0 +1,65 @@
+.appbgcolor, body, .well_without_border {
+  background-color: #fff; }
+
+.button {
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #35af03;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #35af03; }
+
+body {
+  padding-bottom: 70px; }
+
+.well_without_border {
+  border: 0px solid #fff;
+  border-radius: 0px;
+  color: #fff;
+  box-shadow: none; }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  color: #35af03;
+  font-family: "Open Sans", sans-serif; }
+
+h1 {
+  margin: 10px; }
+
+.appbgcolor, body, .well_without_border {
+  background-color: #fff; }
+
+.button {
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #35af03;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #35af03; }
+
+body {
+  padding-bottom: 70px; }
+
+.well_without_border {
+  border: 0px solid #fff;
+  border-radius: 0px;
+  color: #fff;
+  box-shadow: none; }
+
+.loginform {
+  margin-top: 50px; }
+  .loginform div input {
+    margin-bottom: 10px; }
+  .loginform .logintext {
+    height: 30px;
+    width: 200px;
+    font-size: 20px; }
+
+/*# sourceMappingURL=style.css.map */

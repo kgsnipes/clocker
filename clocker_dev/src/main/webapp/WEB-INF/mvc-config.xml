@@ -8,7 +8,18 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-<mvc:annotation-driven />
+ <mvc:annotation-driven />
+<!-- <context:annotation-config /> -->
+
+<context:component-scan base-package="com.clocker.controller" />
+<context:component-scan base-package="com.clocker.aop" />
+<context:component-scan base-package="com.clocker.service.impl" />
+<context:component-scan base-package="com.clocker.controller.rest" />
+<context:component-scan base-package="com.clocker.repository" />
+<context:component-scan base-package="com.clocker.config" />
+
+<mvc:resources mapping="/ui/**" location="/WEB-INF/ui/" cache-period="31536000"/>
+
 
 
 	<bean id="applicationProperties"
@@ -46,7 +57,7 @@
     </property>
 </bean>
 	
-	<mvc:annotation-driven />
+	
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -55,13 +66,8 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-<context:component-scan base-package="com.clocker.controller" />
-<context:component-scan base-package="com.clocker.aop" />
-<context:component-scan base-package="com.clocker.service.impl" />
-<context:component-scan base-package="com.clocker.controller.rest" />
-<context:component-scan base-package="com.clocker.repository" />
-<context:component-scan base-package="com.clocker.security" />
-<context:component-scan base-package="com.clocker.config" />
+
+
 
 
 </beans>

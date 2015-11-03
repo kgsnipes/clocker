@@ -21,22 +21,7 @@
 	</bean>
 	<!-- ehcache -->
 	
-	
-	<!-- aspects
-	<bean id="userAspect" class="com.clocker.aop.UserAspect"></bean>
-	<bean id="applicationAspect" class="com.clocker.aop.ApplicationAspect"></bean>  -->
-	<!-- aspects -->
-	
-	<!-- config
-	<bean id="clockerApplicationContextRefreshedListener" class="com.clocker.config.ClockerAppListener"></bean>
-	<bean id="defaultUserAuthenticationBean" class="com.clocker.security.DefaultUserAuthenticationProvider"></bean> -->
-	<!-- config -->
-	
-	
-	<!-- services 
-	<bean id="userService" class="com.clocker.service.impl.DefaultUserService"></bean>
-	<bean id="bootstrapService" class="com.clocker.service.impl.DefaultBootstrapService"></bean>-->
-	<!-- services -->
+
 
 
 
