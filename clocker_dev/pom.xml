@@ -79,8 +79,8 @@
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 		</dependency>
-		
-		
+
+
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -91,8 +91,8 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
-		
-		
+
+
 		<!-- JSON -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -186,6 +186,17 @@
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+		
+		<dependency>
+		 <groupId>org.freemarker</groupId>
+		 <artifactId>freemarker</artifactId>
+		</dependency>	
+
 	</dependencies>
 
 
@@ -199,8 +210,8 @@
 					<path>/clocker</path>
 					<httpsPort>8080</httpsPort>
 					<httpsPort>8443</httpsPort>
-        			<keystoreFile>${basedir}/src/main/resources/certificates/rootkeystore.jks</keystoreFile>
-        			<keystorePass>root123</keystorePass>
+					<keystoreFile>${basedir}/src/main/resources/certificates/rootkeystore.jks</keystoreFile>
+					<keystorePass>root123</keystorePass>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -241,6 +252,7 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 

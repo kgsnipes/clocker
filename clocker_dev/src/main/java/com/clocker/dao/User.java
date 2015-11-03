@@ -21,6 +21,8 @@ public class User {
 	private Date lastModifiedOn;
 	private String createdBy;
 	private String apiKey;
+	private String forgotpasswordtoken;
+	
 	
 	public List<String> getOrganisations() {
 		return organisations;

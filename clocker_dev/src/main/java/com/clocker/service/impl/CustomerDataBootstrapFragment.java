@@ -24,11 +24,11 @@ public class CustomerDataBootstrapFragment implements BootstrapFragment {
 	public void performTask() {
 		log.info("Performing bootstrap activities");
 		UserDTO user=new UserDTO();
-		user.setEmail("admin");
+		user.setEmail("kgsnipes@gmail.com");
 		user.setPassword("nimda");
 		user.setRoles(Arrays.asList(new String[]{"ROLE_SUPERUSER"}));;
 		userService.createUser(user, "admin");
-		User userModel=userService.getUserByEmail("admin");
+		User userModel=userService.getUserByEmail("kgsnipes@gmail.com");
 		log.info(user.getEmail());
 		log.info(user.getPassword());
 

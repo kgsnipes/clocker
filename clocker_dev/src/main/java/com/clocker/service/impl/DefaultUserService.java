@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import com.clocker.dao.User;
 import com.clocker.dto.UserDTO;
+import com.clocker.exception.UserNotFoundException;
 import com.clocker.repository.UserRepository;
 import com.clocker.service.UserService;
 

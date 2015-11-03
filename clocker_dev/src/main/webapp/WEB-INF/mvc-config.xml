@@ -20,9 +20,9 @@
 
 <mvc:resources mapping="/ui/**" location="/WEB-INF/ui/" cache-period="31536000"/>
 
+<context:property-placeholder location="classpath:config/application.properties"/>
 
-
-	<bean id="applicationProperties"
+	<!-- <bean id="applicationProperties"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
@@ -30,7 +30,26 @@
 			</list>
 		</property>
 		<property name="ignoreUnresolvablePlaceholders" value="true" />
-	</bean>
+	</bean> -->
+	
+	<!-- Production implementation of the JavaMailSender interface, supporting 
+		both JavaMail MimeMessages and Spring SimpleMailMessages -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${mail.smtp.host}" />
+		<property name="port" value="${mail.smtp.port}" />
+		<property name="username" value="${mail.smtp.username}" />
+		<property name="password" value="${mail.smtp.password}" />
+ 
+		<!-- The name of the property, following JavaBean naming conventions -->
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">${mail.transport.protocol}</prop>
+				<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+				<prop key="mail.smtp.starttls.enable">${mail.smtp.starttls.enable}</prop>
+				<prop key="mail.debug">${mail.debug}</prop>
+			</props>
+		</property>
+		</bean>
 	
 	
 	<bean id="messageSource"
@@ -62,8 +81,8 @@
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
-		<property name="prefix" value="/WEB-INF/view/" />
-		<property name="suffix" value=".jsp" />
+		<property name="prefix" value="${view.folder.path}" />
+		<property name="suffix" value="${view.file.extension}" />
 	</bean>
 
 

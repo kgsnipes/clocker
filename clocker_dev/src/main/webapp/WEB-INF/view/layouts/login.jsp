@@ -18,12 +18,18 @@
 	<div class="col-md-12">
 		<jsp:include page="../partials/header.jsp"></jsp:include>
 	</div>
-	
+	<div>
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<jsp:include page="../partials/errors.jsp"></jsp:include>
+	</div>
+	<div class="col-md-4"></div>
+	</div>
 	</div>
 	<div class="row">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
-		<jsp:include page="../partials/signupform.jsp"></jsp:include>
+		<jsp:include page="../partials/loginform.jsp"></jsp:include>
 	</div>
 	<div class="col-md-4"></div>
 	</div>

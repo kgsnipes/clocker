@@ -15,12 +15,24 @@
 	</bean>
 	<bean id="ehcache"
 		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-		<property name="configLocation" value="classpath:ehcache.xml" />
-		<property name="shared" value="true" />
+		<property name="configLocation" value="classpath:${ehcache.config.filename}" />
+		<property name="shared" value="${ehcache.config.shared}" />
 	
 	</bean>
 	<!-- ehcache -->
 	
+	
+	<!-- Freemarker & templates -->
+<!-- Factory bean that creates a FreeMarker Configuration and provides it as
+     bean reference. This bean is intended for any kind of usage of FreeMarker
+     in application code, e.g. for generating email content. -->
+<!-- FreeMarker Configuration is the Main entry point into the FreeMarker API, this class encapsulates the 
+     various configuration parameters with which FreeMarker is run -->
+<bean class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean" id="freemarkerConfiguration">
+  <!-- Turn this off to always load via SpringTemplateLoader -->
+  <property name="preferFileSystemAccess" value="${email.template.preferFileSystemAccess}"></property>
+  <property name="templateLoaderPath" value="classpath:${email.template.folder}"></property>
+</bean>
 
 
 

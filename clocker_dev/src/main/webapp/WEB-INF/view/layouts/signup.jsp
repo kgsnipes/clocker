@@ -23,7 +23,7 @@
 	<div class="row">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
-		<jsp:include page="../partials/loginform.jsp"></jsp:include>
+		<jsp:include page="../partials/signupform.jsp"></jsp:include>
 	</div>
 	<div class="col-md-4"></div>
 	</div>

@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 import com.clocker.dao.User;
 import com.clocker.dto.UserDTO;
+import com.clocker.exception.UserNotFoundException;
 
 public interface UserService extends UserDetailsService{
 	
@@ -16,5 +17,6 @@ public interface UserService extends UserDetailsService{
 	public User getUserByEmail(String email);
 	public List<User> getUsersByRole(String role,int page,int limit);
 	public List<GrantedAuthority> getGrantedAuthorities(List<String> roles);
+	
 
 }

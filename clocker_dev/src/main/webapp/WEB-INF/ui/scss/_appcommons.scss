@@ -22,6 +22,12 @@ $app_fontfamily: 'Open Sans',sans-serif;
 		color:$app_bgcolor;
 		@include bold_text(bold);
 		border:1px solid $app_fontcolor;
+		
+}
+
+.errorMessages
+{
+	color:#fe593e;
 }
 
 body

@@ -12,6 +12,9 @@
   font-weight: bold;
   border: 1px solid #35af03; }
 
+.errorMessages {
+  color: #fe593e; }
+
 body {
   padding-bottom: 70px; }
 
@@ -44,6 +47,9 @@ h1 {
   font-weight: bold;
   border: 1px solid #35af03; }
 
+.errorMessages {
+  color: #fe593e; }
+
 body {
   padding-bottom: 70px; }
 
@@ -61,5 +67,7 @@ body {
     height: 30px;
     width: 200px;
     font-size: 20px; }
+  .loginform .forgotpassword {
+    margin-left: 20px; }
 
 /*# sourceMappingURL=style.css.map */
